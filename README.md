@@ -14,7 +14,7 @@
 ## Description
 transform `swagger.json` to interfaces of typescript.
 
-##Usage
+## Usage
 ### cli
 
 - init --- `options`
