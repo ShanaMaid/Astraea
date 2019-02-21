@@ -1,0 +1,36 @@
+{
+  "name": "sw2ts",
+  "version": "0.0.1",
+  "description": "transform swagger.json to interfaces of typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./example/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShanaMaid/sw2ts.git"
+  },
+  "keywords": [
+    "swagger",
+    "typescript",
+    "sw2ts",
+    "swagger2dts",
+    "interfaces"
+  ],
+  "bin": {
+    "sw2ts": "./bin/sw2ts.js"
+  },
+  "author": "ShanaMaid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShanaMaid/sw2ts/issues"
+  },
+  "homepage": "https://github.com/ShanaMaid/sw2ts#readme",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "consola": "^2.4.1",
+    "fs-extra": "^7.0.1",
+    "json2ts": "0.0.7",
+    "swagmock": "^1.0.0"
+  }
+}
