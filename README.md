@@ -13,6 +13,11 @@
 ## Description
 transform `swagger.json` to interfaces of typescript.
 
+## Install
+```
+npm install sw2ts
+```
+
 ## Usage
 ### cli
 
