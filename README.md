@@ -5,10 +5,9 @@
   </a>
   <img src='https://img.shields.io/npm/v/sw2ts.svg?style=flat-square' alt="version">
   <img src='https://img.shields.io/npm/l/sw2ts.svg' alt="license">
-  <img src='http://img.badgesize.io/https://unpkg.com/sw2ts/lib/Archer.js?compression=gzip&label=gzip%20size:%20&style=flat-square'>
+  <img src='http://img.badgesize.io/https://unpkg.com/sw2ts/index.js?compression=gzip&label=gzip%20size:%20&style=flat-square'>
   <img src='https://img.shields.io/npm/dt/sw2ts.svg?style=flat-square' alt="downloads">
   <img src='https://img.shields.io/npm/dm/sw2ts.svg?style=flat-square' alt="downloads-month">
-  <a href='https://blog.shanamaid.top/sw2ts/'><img src='https://img.shields.io/badge/website%20-archer-51b26d.svg'/></a>
 </p>
 
 ## Description
