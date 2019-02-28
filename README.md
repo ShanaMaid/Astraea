@@ -1,7 +1,7 @@
 <h1 align='center'>Astraea</h1>
 <p align='center'>
-  <a href="https://travis-ci.com/ShanaMaid/astraea/">
-    <img src="https://travis-ci.com/ShanaMaid/astraea.svg" alt="travis ci badge">
+  <a href="https://travis-ci.com/ShanaMaid/Astraea/">
+    <img src="https://travis-ci.com/ShanaMaid/Astraea.svg" alt="travis ci badge">
   </a>
   <img src='https://img.shields.io/npm/v/astraea.svg?style=flat-square' alt="version">
   <img src='https://img.shields.io/npm/l/astraea.svg' alt="license">
