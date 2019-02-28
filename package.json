@@ -1,7 +1,20 @@
 {
   "name": "astraea",
   "version": "0.0.1",
-  "description": "",
+  "description": "help developer output the typescript interfaces of api",
+  "keywords": [
+    "swagger",
+    "typescript",
+    "sw2ts",
+    "swagger2dts",
+    "interfaces",
+    "route-interface",
+    "route-ts",
+    "ts",
+    "api-interface",
+    "api-route",
+    "api"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "rm -rf ./example && node test/json.js && node ./test/swagger.js",

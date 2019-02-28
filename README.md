@@ -1,13 +1,13 @@
-<h1 align='center'>sw2ts</h1>
+<h1 align='center'>Astraea</h1>
 <p align='center'>
-  <a href="https://travis-ci.com/ShanaMaid/sw2ts/">
-    <img src="https://travis-ci.com/ShanaMaid/sw2ts.svg" alt="travis ci badge">
+  <a href="https://travis-ci.com/ShanaMaid/astraea/">
+    <img src="https://travis-ci.com/ShanaMaid/astraea.svg" alt="travis ci badge">
   </a>
-  <img src='https://img.shields.io/npm/v/sw2ts.svg?style=flat-square' alt="version">
-  <img src='https://img.shields.io/npm/l/sw2ts.svg' alt="license">
-  <img src='http://img.badgesize.io/https://unpkg.com/sw2ts/index.js?compression=gzip&label=gzip%20size:%20&style=flat-square'>
-  <img src='https://img.shields.io/npm/dt/sw2ts.svg?style=flat-square' alt="downloads">
-  <img src='https://img.shields.io/npm/dm/sw2ts.svg?style=flat-square' alt="downloads-month">
+  <img src='https://img.shields.io/npm/v/astraea.svg?style=flat-square' alt="version">
+  <img src='https://img.shields.io/npm/l/astraea.svg' alt="license">
+  <img src='http://img.badgesize.io/https://unpkg.com/astraea/index.js?compression=gzip&label=gzip%20size:%20&style=flat-square'>
+  <img src='https://img.shields.io/npm/dt/astraea.svg?style=flat-square' alt="downloads">
+  <img src='https://img.shields.io/npm/dm/astraea.svg?style=flat-square' alt="downloads-month">
 </p>
 
 ## Description
@@ -15,31 +15,67 @@ transform `swagger.json` to interfaces of typescript.
 
 ## Install
 ```
-npm install sw2ts
+npm install astraea
 ```
 
 ## Usage
-### cli
 
-- init --- `options`
-  - -i，--input，swagger.json path
-  - -o，--output，output dir, default: `./`
-
-```
-sw2ts init -i ./example/swagger.json -o ./
-```
-
-### node
-```
-const sw2ts = require('sw2ts');
+### swagger
+[Demo](./example/swagger)
+[Test](./test/swagger.js)
+#### options
+  - `input`, swagger.json
+  - `dir`, output directory
+  - `blackList`, filter `path`
+```js
+const astraea = require('astraea');
 const swagger = require('./swagger.json');
-sw2ts(swagger, __dirname);
+astraea.swagger(
+  swagger, 
+  './example/swagger', 
+  ['DELETE/pet/:petId']
+)
 ```
 
+### json
+[Demo](./example/json)
+[Test](./test/json.js)
+#### options
+  - `input`, json description
+  - `dir`, output directory
+  - `blackList`, filter `path`
+```js
+const astraea = require('astraea');
+
+astraea.json(
+  {
+    get: {
+      '/api/persion/detail': {
+        a: 1,
+      },
+      '/api/pet/detail': {
+        a: 1,
+      }
+    },
+    post: {
+      '/api/persion/create': () => [{
+        a: 1,
+        b: [
+          {
+            v: 1
+          }
+        ]
+      }],
+    }
+  }, 
+  './example/json', 
+  [
+    'GET/api/persion/detail'
+  ]
+)
+```
 ## Examlpe
 [here](./example)
-### swagger.json
-[click here](./example/swagger.json)
 
 ### routes.ts
 [click here](./example/routes.ts)
