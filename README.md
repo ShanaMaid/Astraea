@@ -11,7 +11,7 @@
 </p>
 
 ## Description
-transform `swagger.json` to interfaces of typescript.
+help developer output the typescript interfaces of api by `swagger.json` or `json`
 
 ## Install
 ```
