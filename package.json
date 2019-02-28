@@ -1,36 +1,36 @@
 {
-  "name": "sw2ts",
+  "name": "astraea",
   "version": "0.0.1",
-  "description": "transform swagger.json to interfaces of typescript",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./example/index.js"
+    "test": "rm -rf ./example && node test/json.js && node ./test/swagger.js",
+    "tsc": "npm run tsc:ts && npm run tsc:js",
+    "tsc:ts": "tsc -p ./ --outDir lib/ --declaration ",
+    "tsc:js": "tsc -p ./ --outDir lib/ --allowJS ",
+    "lint:ts": "tslint -p ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShanaMaid/sw2ts.git"
+    "url": "git+https://github.com/ShanaMaid/Astraea.git"
   },
-  "keywords": [
-    "swagger",
-    "typescript",
-    "sw2ts",
-    "swagger2dts",
-    "interfaces"
-  ],
-  "bin": {
-    "sw2ts": "./bin/sw2ts.js"
-  },
-  "author": "ShanaMaid",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ShanaMaid/sw2ts/issues"
+    "url": "https://github.com/ShanaMaid/Astraea/issues"
   },
-  "homepage": "https://github.com/ShanaMaid/sw2ts#readme",
+  "homepage": "https://github.com/ShanaMaid/Astraea#readme",
   "dependencies": {
-    "commander": "^2.19.0",
-    "consola": "^2.4.1",
+    "@types/fs-extra": "^5.0.5",
+    "@types/node": "^11.9.5",
+    "@types/underscore": "^1.8.9",
     "fs-extra": "^7.0.1",
-    "json2ts": "0.0.7",
-    "swagmock": "^1.0.0"
+    "swagmock": "^1.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.3.3333",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.13.0"
   }
 }

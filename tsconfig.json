@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "alwaysStrict": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "rootDir": "./",
+    "lib": ["es2017"],
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node"],
+    "baseUrl": ".",
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "example"]
+}

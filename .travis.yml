@@ -11,4 +11,6 @@ install:
  - npm install
 
 script:
+  - npm run lint:ts
+  - npm run tsc
   - npm run test
