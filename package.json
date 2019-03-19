@@ -21,7 +21,8 @@
     "tsc": "npm run tsc:ts && npm run tsc:js",
     "tsc:ts": "tsc -p ./ --outDir lib/ --declaration ",
     "tsc:js": "tsc -p ./ --outDir lib/ --allowJS ",
-    "lint:ts": "tslint -p ."
+    "lint:ts": "tslint -p .",
+    "preversion": "npm run tsc"
   },
   "repository": {
     "type": "git",

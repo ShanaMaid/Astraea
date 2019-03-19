@@ -43,7 +43,7 @@ const outfile =  (interfaces: IInterface[], dir: string) => {
     const temp: string[] = [];
     output += `export interface I${firstWordUpper(method)}Routes {\r\n`;
     methodInterfaces[method].forEach((paths) => {
-      const name = `${firstWordUpper(method)}${path2Hump(paths)}`;
+      const name = `${firstWordUpper(method)}${path2Hump(paths)}`.replace(/-/g, '$');
       headImport.push(`import { RootObject as ${name} } from './${method.toUpperCase()}${paths}';`);
       temp.push(`  '${paths}': ${name};`);
     });
