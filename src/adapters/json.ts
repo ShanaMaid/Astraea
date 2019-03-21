@@ -1,7 +1,6 @@
 import { IInterface } from '../utils/out';
 import outFile from '../utils/out';
 import json2ts from '../utils/json2ts';
-import filter from '../utils/filter';
 
 export interface IApi {
   // tslint:disable-next-line no-any
@@ -43,9 +42,6 @@ export default (
   dir: string,
   blackList?: string[],
 ) => {
-  let result = parse(json);
-  if (blackList) {
-    result = filter(blackList, result);
-  }
-  outFile(result, dir);
+  const result = parse(json);
+  outFile(result, dir, blackList);
 };

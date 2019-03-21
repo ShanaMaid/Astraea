@@ -20,7 +20,7 @@ export interface IMethodInterfaces {
  * @param interfaces interface相关描述数组
  * @param dir 输出路径
  */
-const outfile =  (interfaces: IInterface[], dir: string) => {
+const outfile =  (interfaces: IInterface[], dir: string, blackList?: string[]) => {
   const methodInterfaces: IMethodInterfaces = {
     get: [],
     post: [],
@@ -29,9 +29,13 @@ const outfile =  (interfaces: IInterface[], dir: string) => {
   };
 
   interfaces.forEach((i) => {
-    // 创建每个route对应的interface文件
-    fs.outputFileSync(path.resolve(dir, i.fileName), i.content);
     methodInterfaces[i.method].push(i.path);
+    // 创建每个route对应的interface文件
+    const name = `${i.method.toUpperCase()}${i.path}`;
+    if (blackList && blackList.indexOf(name) !== -1) {
+      return;
+    }
+    fs.outputFileSync(path.resolve(dir, i.fileName), i.content);
   });
 
   // 生成汇总routes.ts文件

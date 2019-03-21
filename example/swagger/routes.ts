@@ -27,7 +27,7 @@ export interface IGetRoutes {
   '/user/login': GetUserLogin;
   '/user/logout': GetUserLogout;
   '/user/:username': GetUserUsername;
-} 
+}
 
 export interface IPostRoutes {
   '/pet': PostPet;
@@ -37,15 +37,15 @@ export interface IPostRoutes {
   '/user': PostUser;
   '/user/createWithArray': PostUserCreateWithArray;
   '/user/createWithList': PostUserCreateWithList;
-} 
+}
 
 export interface IPutRoutes {
   '/pet': PutPet;
   '/user/:username': PutUserUsername;
-} 
+}
 
 export interface IDeleteRoutes {
   '/store/order/:orderId': DeleteStoreOrderOrderId;
   '/user/:username': DeleteUserUsername;
-} 
+}
 

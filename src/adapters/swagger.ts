@@ -3,7 +3,6 @@ const swagMock = require('swagMock');
 import json2ts from '../utils/json2ts';
 import { IInterface } from '../utils/out';
 import outFile from '../utils/out';
-import filter from '../utils/filter';
 
 const parse = async (swagger: any) => {
   const interfaces: IInterface[] = [];
@@ -51,9 +50,6 @@ export default async (
   dir: string,
   blackList?: string[],
 ) => {
-  let result = await parse(swagger);
-  if (blackList) {
-    result = filter(blackList, result);
-  }
-  outFile(result, dir);
+  const result = await parse(swagger);
+  outFile(result, dir, blackList);
 };
