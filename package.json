@@ -1,6 +1,6 @@
 {
   "name": "astraea",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "help developer output the typescript interfaces of api by swagger or json",
   "keywords": [
     "swagger",
