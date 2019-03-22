@@ -3,7 +3,7 @@ export interface B {
 }
 
 export interface OldRootObject {
-	a: number;
-	b: B[];
+	a?: number;
+	b?: B[];
 }
 export type RootObject = OldRootObject[];
