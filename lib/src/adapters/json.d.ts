@@ -9,6 +9,6 @@ export interface IJson {
 }
 declare const _default: (json: IJson, dir: string, opt?: {
     blackList?: string[] | undefined;
-    allOptional?: boolean | undefined;
+    optional?: boolean | undefined;
 } | undefined) => void;
 export default _default;

@@ -22,7 +22,7 @@ export interface IMethodInterfaces {
  */
 const outfile =  (interfaces: IInterface[], dir: string, opt?: {
   blackList?: string[],
-  allOptional?: boolean;
+  optional?: boolean;
 }) => {
   const methodInterfaces: IMethodInterfaces = {
     get: [],
@@ -31,7 +31,7 @@ const outfile =  (interfaces: IInterface[], dir: string, opt?: {
     delete: []
   };
 
-  const { blackList = [],  allOptional = false } = opt || {};
+  const { blackList = [],  optional = false } = opt || {};
 
   interfaces.forEach((i) => {
     methodInterfaces[i.method].push(i.path);
@@ -42,7 +42,7 @@ const outfile =  (interfaces: IInterface[], dir: string, opt?: {
     }
     let content = i.content;
 
-    if (allOptional) {
+    if (optional) {
       content = content.replace(': ', '?: ');
     }
     fs.outputFileSync(path.resolve(dir, i.fileName), content);

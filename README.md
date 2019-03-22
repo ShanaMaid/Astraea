@@ -26,14 +26,18 @@ npm install astraea
 #### options
   - `input`, swagger.json
   - `dir`, output directory
-  - `blackList`, filter `path`
+  - `opt`, 
+    - `blackList`, filter `path`
+    - `optional`,  boolean, all params are optinaol
 ```js
 const astraea = require('astraea');
 const swagger = require('./swagger.json');
 astraea.swagger(
   swagger, 
   './example/swagger', 
-  ['DELETE/pet/:petId']
+  {
+    blackList: ['DELETE/pet/:petId']
+  }
 )
 ```
 
@@ -70,9 +74,10 @@ astraea.json(
     }
   }, 
   './example/json', 
-  [
-    'GET/api/persion/detail'
-  ]
+  {
+    blackList: [ 'GET/api/persion/detail'],
+    optional: true,
+  }
 )
 ```
 ## How to use?

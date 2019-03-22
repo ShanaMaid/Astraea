@@ -42,7 +42,7 @@ export default (
   dir: string,
   opt?: {
     blackList?: string[],
-    allOptional?: boolean;
+    optional?: boolean;
   }
 ) => {
   const result = parse(json);

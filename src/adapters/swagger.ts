@@ -50,7 +50,7 @@ export default async (
   dir: string,
   opt?: {
     blackList?: string[],
-    allOptional?: boolean;
+    optional?: boolean;
   }
 ) => {
   const result = await parse(swagger);

@@ -1,5 +1,5 @@
 export interface RootObject {
-	id?: number;
+	id: number;
 	username: string;
 	firstName: string;
 	lastName: string;

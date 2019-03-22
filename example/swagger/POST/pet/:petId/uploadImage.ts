@@ -1,5 +1,5 @@
 export interface RootObject {
-	code?: number;
+	code: number;
 	type: string;
 	message: string;
 }

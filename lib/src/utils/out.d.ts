@@ -14,6 +14,6 @@ export interface IMethodInterfaces {
  */
 declare const outfile: (interfaces: IInterface[], dir: string, opt?: {
     blackList?: string[] | undefined;
-    allOptional?: boolean | undefined;
+    optional?: boolean | undefined;
 } | undefined) => void;
 export default outfile;

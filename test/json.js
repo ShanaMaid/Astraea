@@ -24,5 +24,6 @@ astraea.json(
   './example/json', 
   {
     blackList: ['DELETE/pet/:petId'],
+    optional: true,
   }
 )
