@@ -12,5 +12,8 @@ export interface IMethodInterfaces {
  * @param interfaces interface相关描述数组
  * @param dir 输出路径
  */
-declare const outfile: (interfaces: IInterface[], dir: string, blackList?: string[] | undefined) => void;
+declare const outfile: (interfaces: IInterface[], dir: string, opt?: {
+    blackList?: string[] | undefined;
+    allOptional?: boolean | undefined;
+} | undefined) => void;
 export default outfile;

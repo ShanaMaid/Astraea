@@ -1,3 +1,3 @@
 export interface RootObject {
-	a: number;
+	a?: number;
 }

@@ -40,8 +40,11 @@ const parse = (json: IJson) => {
 export default (
   json: IJson,
   dir: string,
-  blackList?: string[],
+  opt?: {
+    blackList?: string[],
+    allOptional?: boolean;
+  }
 ) => {
   const result = parse(json);
-  outFile(result, dir, blackList);
+  outFile(result, dir, opt);
 };

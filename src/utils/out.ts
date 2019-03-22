@@ -20,13 +20,18 @@ export interface IMethodInterfaces {
  * @param interfaces interface相关描述数组
  * @param dir 输出路径
  */
-const outfile =  (interfaces: IInterface[], dir: string, blackList?: string[]) => {
+const outfile =  (interfaces: IInterface[], dir: string, opt?: {
+  blackList?: string[],
+  allOptional?: boolean;
+}) => {
   const methodInterfaces: IMethodInterfaces = {
     get: [],
     post: [],
     put: [],
     delete: []
   };
+
+  const { blackList = [],  allOptional = false } = opt || {};
 
   interfaces.forEach((i) => {
     methodInterfaces[i.method].push(i.path);
@@ -35,7 +40,12 @@ const outfile =  (interfaces: IInterface[], dir: string, blackList?: string[]) =
     if (blackList && blackList.indexOf(name) !== -1) {
       return;
     }
-    fs.outputFileSync(path.resolve(dir, i.fileName), i.content);
+    let content = i.content;
+
+    if (allOptional) {
+      content = content.replace(': ', '?: ');
+    }
+    fs.outputFileSync(path.resolve(dir, i.fileName), content);
   });
 
   // 生成汇总routes.ts文件

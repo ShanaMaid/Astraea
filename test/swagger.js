@@ -3,5 +3,7 @@ const swagger = require('./swagger.json');
 astraea.swagger(
   swagger, 
   './example/swagger', 
-  ['DELETE/pet/:petId']
+  {
+    blackList: ['DELETE/pet/:petId'],
+  }
 )

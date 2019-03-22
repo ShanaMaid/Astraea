@@ -1,3 +1,3 @@
 export interface RootObject {
-	bejev: number;
+	gusevehic?: number;
 }

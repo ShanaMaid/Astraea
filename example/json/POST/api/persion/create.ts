@@ -1,5 +1,5 @@
 export interface B {
-	v: number;
+	v?: number;
 }
 
 export interface OldRootObject {

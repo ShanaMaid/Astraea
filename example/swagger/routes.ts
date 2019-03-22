@@ -15,6 +15,7 @@ import { RootObject as PostUserCreateWithArray } from './POST/user/createWithArr
 import { RootObject as PostUserCreateWithList } from './POST/user/createWithList';
 import { RootObject as PutPet } from './PUT/pet';
 import { RootObject as PutUserUsername } from './PUT/user/:username';
+import { RootObject as DeletePetPetId } from './DELETE/pet/:petId';
 import { RootObject as DeleteStoreOrderOrderId } from './DELETE/store/order/:orderId';
 import { RootObject as DeleteUserUsername } from './DELETE/user/:username';
 
@@ -45,6 +46,7 @@ export interface IPutRoutes {
 }
 
 export interface IDeleteRoutes {
+  '/pet/:petId': DeletePetPetId;
   '/store/order/:orderId': DeleteStoreOrderOrderId;
   '/user/:username': DeleteUserUsername;
 }

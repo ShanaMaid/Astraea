@@ -7,5 +7,8 @@ export interface IJson {
     put?: IApi;
     delete?: IApi;
 }
-declare const _default: (json: IJson, dir: string, blackList?: string[] | undefined) => void;
+declare const _default: (json: IJson, dir: string, opt?: {
+    blackList?: string[] | undefined;
+    allOptional?: boolean | undefined;
+} | undefined) => void;
 export default _default;

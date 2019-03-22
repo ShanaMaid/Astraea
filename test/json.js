@@ -22,7 +22,7 @@ astraea.json(
     }
   }, 
   './example/json', 
-  [
-    'GET/api/persion/detail'
-  ]
+  {
+    blackList: ['DELETE/pet/:petId'],
+  }
 )

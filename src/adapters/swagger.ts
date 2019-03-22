@@ -48,8 +48,11 @@ const parse = async (swagger: any) => {
 export default async (
   swagger: any,
   dir: string,
-  blackList?: string[],
+  opt?: {
+    blackList?: string[],
+    allOptional?: boolean;
+  }
 ) => {
   const result = await parse(swagger);
-  outFile(result, dir, blackList);
+  outFile(result, dir, opt);
 };

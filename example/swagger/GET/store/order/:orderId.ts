@@ -1,5 +1,5 @@
 export interface RootObject {
-	id: number;
+	id?: number;
 	petId: number;
 	quantity: number;
 	shipDate: string;
