@@ -1,3 +1,3 @@
 export interface RootObject {
-	aduzo: number;
+	relzon: number;
 }

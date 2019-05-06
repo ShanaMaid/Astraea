@@ -7,7 +7,7 @@ astraea.json(
         a: 1,
       },
       '/api/pet/detail': {
-        a: 1,
+        a: null,
       }
     },
     post: {
