@@ -43,7 +43,8 @@ const outfile =  (interfaces: IInterface[], dir: string, opt?: {
     let content = i.content;
 
     if (optional) {
-      content = content.replace(/: !(any)/g, '?: ');
+      content = content.replace(/\?: any/g, ': any')
+                       .replace(/: /g, '?: ');
     }
     fs.outputFileSync(path.resolve(dir, i.fileName), content);
   });
