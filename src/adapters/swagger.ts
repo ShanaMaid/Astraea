@@ -15,7 +15,7 @@ const parse = async (swagger: any) => {
       const pathName = `${method.toUpperCase()}${url}`.replace(/\{(.*?)\}/g, ':$1');
 
       const temp: IInterface = {
-        fileName: `${pathName}.ts`,
+        fileName: `${pathName}.d.ts`,
         method,
         path: url.replace(/\{(.*?)\}/g, ':$1'),
         content: '',

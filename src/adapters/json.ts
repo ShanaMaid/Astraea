@@ -25,7 +25,7 @@ const parse = (json: IJson) => {
         let content = typeof el  === 'function' ? el() : el;
         content = json2ts(content);
         const temp: IInterface = {
-          fileName: `${pathName}.ts`,
+          fileName: `${pathName}.d.ts`,
           method,
           path: api,
           content,

@@ -4,6 +4,6 @@ astraea.swagger(
   swagger, 
   './example/swagger', 
   {
-    blackList: ['DELETE/pet/:petId'],
+    blackList: [],
   }
 )

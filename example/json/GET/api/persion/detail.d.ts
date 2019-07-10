@@ -1,3 +1,3 @@
 export interface RootObject {
-	relzon: number;
+	a?: number;
 }

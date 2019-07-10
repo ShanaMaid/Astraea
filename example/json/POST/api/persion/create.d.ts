@@ -1,9 +1,9 @@
 export interface B {
-	v: number;
+	v?: number;
 }
 
 export interface OldRootObject {
-	a: number;
-	b: B[];
+	a?: number;
+	b?: B[];
 }
 export type RootObject = OldRootObject[];
