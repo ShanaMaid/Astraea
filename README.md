@@ -49,7 +49,10 @@ astraea.swagger(
 #### options
   - `input`, json description
   - `dir`, output directory
-  - `blackList`, filter `path`
+  - `opt`, 
+    - `blackList`, filter `path`
+    - `optional`,  boolean, all params are optinaol
+    - `suffix`, file format, eg: `ts` or `d.ts`
 ```js
 const astraea = require('astraea');
 
