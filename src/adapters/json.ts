@@ -14,8 +14,15 @@ export interface IJson {
   delete?: IApi;
 }
 
-const parse = (json: IJson) => {
+export interface IOpt {
+  blackList?: string[];
+  optional?: boolean;
+  suffix?: string;
+}
+
+const parse = (json: IJson, opt?: IOpt) => {
   const interfaces: IInterface[] = [];
+  const { suffix = 'ts' } = (opt || {});
   Object.keys(json).forEach((method) => {
     const apis = json[method as keyof IJson] as IApi;
     for (const api in apis) {
@@ -25,7 +32,7 @@ const parse = (json: IJson) => {
         let content = typeof el  === 'function' ? el() : el;
         content = json2ts(content);
         const temp: IInterface = {
-          fileName: `${pathName}.d.ts`,
+          fileName: `${pathName}.${suffix}`,
           method,
           path: api,
           content,
@@ -40,11 +47,8 @@ const parse = (json: IJson) => {
 export default (
   json: IJson,
   dir: string,
-  opt?: {
-    blackList?: string[],
-    optional?: boolean;
-  }
+  opt?: IOpt,
 ) => {
-  const result = parse(json);
+  const result = parse(json, opt);
   outFile(result, dir, opt);
 };

@@ -50,3 +50,4 @@ export interface IDeleteRoutes {
   '/store/order/:orderId': DeleteStoreOrderOrderId;
   '/user/:username': DeleteUserUsername;
 }
+

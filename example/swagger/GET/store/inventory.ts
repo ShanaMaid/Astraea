@@ -1,3 +1,3 @@
 export interface RootObject {
-	urbut: number;
+	gakejaw: number;
 }

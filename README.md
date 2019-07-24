@@ -29,6 +29,7 @@ npm install astraea
   - `opt`, 
     - `blackList`, filter `path`
     - `optional`,  boolean, all params are optinaol
+    - `suffix`, file format, eg: `ts` or `d.ts`
 ```js
 const astraea = require('astraea');
 const swagger = require('./swagger.json');

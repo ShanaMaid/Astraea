@@ -4,8 +4,15 @@ import json2ts from '../utils/json2ts';
 import { IInterface } from '../utils/out';
 import outFile from '../utils/out';
 
-const parse = async (swagger: any) => {
+export interface IOpt {
+  blackList?: string[];
+  optional?: boolean;
+  suffix?: string;
+}
+
+const parse = async (swagger: any, opt?: IOpt) => {
   const interfaces: IInterface[] = [];
+  const { suffix = 'ts' } = (opt || {});
   const mockgen = swagMock(swagger);
   const urls = Object.keys(swagger.paths);
 
@@ -15,7 +22,7 @@ const parse = async (swagger: any) => {
       const pathName = `${method.toUpperCase()}${url}`.replace(/\{(.*?)\}/g, ':$1');
 
       const temp: IInterface = {
-        fileName: `${pathName}.d.ts`,
+        fileName: `${pathName}.${suffix}`,
         method,
         path: url.replace(/\{(.*?)\}/g, ':$1'),
         content: '',
@@ -48,11 +55,8 @@ const parse = async (swagger: any) => {
 export default async (
   swagger: any,
   dir: string,
-  opt?: {
-    blackList?: string[],
-    optional?: boolean;
-  }
+  opt?: IOpt,
 ) => {
-  const result = await parse(swagger);
+  const result = await parse(swagger, opt);
   outFile(result, dir, opt);
 };
