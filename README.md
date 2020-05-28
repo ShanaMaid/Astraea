@@ -84,6 +84,36 @@ astraea.json(
   }
 )
 ```
+
+
+### scan
+
+`astraea.scan` based on `astraea.json`, it will scan all `.js` files of `inputDir`.
+
+[Demo](./example/scan)
+
+[Test](./test/scan.js)
+#### options
+  - `inputDir`, .js dir
+  - `outputDir`, output directory
+  - `opt`, 
+    - `blackList`, filter `path`
+    - `optional`,  boolean, all params are optinaol
+    - `suffix`, file format, eg: `ts` or `d.ts`
+```js
+const astraea = require('../index.js');
+const path = require('path');
+
+astraea.scan({
+  inputDir: path.resolve(__dirname, './scanData'),
+  outputDir: path.resolve(__dirname, '../example/scan'),
+  request: {
+    optional: true,
+  },
+  response: {},
+});
+```
+
 ## How to use?
 this is a simple example, you need to rework if use in prod!
 ```js
@@ -178,3 +208,4 @@ export interface IDeleteRoutes {
   '/user/:username': DeleteUserUsername;
 } 
 ```
+
