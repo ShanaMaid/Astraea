@@ -16,6 +16,7 @@
     "api"
   ],
   "main": "index.js",
+  "typings": "lib/src/index.d.ts",
   "scripts": {
     "test": "rm -rf ./example && node test/json.js && node ./test/swagger.js",
     "tsc": "npm run tsc:ts && npm run tsc:js",
