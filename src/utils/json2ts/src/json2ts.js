@@ -117,10 +117,10 @@ var Json2Ts = (function () {
         for (var index = 0, length_3 = allKeys.length; index < length_3; index++) {
             var key = allKeys[index];
             if (_.contains(optionalKeys, key)) {
-                result = result.replace(new RegExp(key + ":", "g"), this.toLowerFirstLetter(key) + "?:");
+                result = result.replace(new RegExp(key + ":", "g"), (key) + "?:");
             }
             else {
-                result = result.replace(new RegExp(key + ":", "g"), this.toLowerFirstLetter(key) + ":");
+                result = result.replace(new RegExp(key + ":", "g"), (key) + ":");
             }
         }
         objectName = this.removeMajority(objectName);
