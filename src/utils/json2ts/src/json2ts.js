@@ -31,7 +31,7 @@ var Json2Ts = (function () {
                         jsonContent[key] = "any" + multiArrayBrackets + ";";
                     }
                 }
-                else if (value.length > 0 && _.isObject(value[0])) {
+                else if (value.length > 0 && _.isObject(value[0]) && !Array.isArray(value[0])) {
                     var childObjectName = this.toUpperFirstLetter(key);
                     objectResult.push(this.convertObjectToTsInterfaces(value[0], childObjectName));
                     jsonContent[key] = this.removeMajority(childObjectName) + "[];";
