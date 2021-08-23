@@ -11,12 +11,12 @@
     "sourceMap": true,
     "strictNullChecks": true,
     "target": "es5",
-    "rootDir": "./",
+    "rootDir": "./src",
     "lib": ["es2017", "esnext",  "ES7", "ESNext.Array"],
     "typeRoots": ["node_modules/@types"],
     "types": ["node"],
-    "baseUrl": ".",
+    "baseUrl": "./src",
+    "outDir": "lib"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "example"]
+  "exclude": ["node_modules", "examples"]
 }

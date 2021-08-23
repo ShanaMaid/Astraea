@@ -95,7 +95,7 @@ astraea.json(
 [Test](./test/scan.js)
 #### options
   - `inputDir`, .js dir
-  - `outputDir`, output directory
+  - `typingDir`, output directory
   - `opt`, 
     - `blackList`, filter `path`
     - `optional`,  boolean, all params are optinaol
@@ -106,7 +106,7 @@ const path = require('path');
 
 astraea.scan({
   inputDir: path.resolve(__dirname, './scanData'),
-  outputDir: path.resolve(__dirname, '../example/scan'),
+  typingDir: path.resolve(__dirname, '../example/scan'),
   request: {
     optional: true,
   },
